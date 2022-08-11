@@ -1,4 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class ImagePaths {
-  static const String manAndMap = 'assets/images/man_and_map.png';
-  static const manWithBackpack = 'assets/images/man_with_backpack.png';
+  static const MAN_WITH_BACKPACK = 'assets/images/man_with_backpack.png';
 }
