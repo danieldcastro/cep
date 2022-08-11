@@ -10,7 +10,7 @@ class ConfigTheme {
         bodyText1: ConfigTheme.instance().textStyle(
             fontSize: 15,
             fontWeight: FontWeight.normal,
-            height: 0.21,
+            height: 0,
             letterSpacing: 0.13),
         bodyText2: ConfigTheme.instance().textStyle(
             fontSize: 14,
@@ -25,7 +25,7 @@ class ConfigTheme {
         subtitle2: ConfigTheme.instance().textStyle(
             fontSize: 13,
             fontWeight: FontWeight.normal,
-            height: 0.21,
+            height: 0,
             letterSpacing: 0.13),
         headline2: ConfigTheme.instance().textStyle(
             fontSize: 60,
@@ -39,7 +39,7 @@ class ConfigTheme {
             letterSpacing: 0),
         caption: ConfigTheme.instance().textStyle(
             fontSize: 12,
-            height: 3,
+            height: 1,
             fontWeight: FontWeight.normal,
             letterSpacing: 0),
         overline: ConfigTheme.instance().textStyle(
