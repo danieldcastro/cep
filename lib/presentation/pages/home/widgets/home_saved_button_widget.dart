@@ -1,10 +1,12 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/util/helpers/icon_paths.dart';
 import '../../../theme/app_colors.dart';
+import '../controllers/home_controller.dart';
 
-class HomeSavedButtonWidget extends StatelessWidget {
+class HomeSavedButtonWidget extends GetView<HomeController> {
   const HomeSavedButtonWidget({
     Key? key,
   }) : super(key: key);
@@ -40,11 +42,18 @@ class HomeSavedButtonWidget extends StatelessWidget {
               CircleAvatar(
                 radius: 12.5,
                 backgroundColor: AppColors().normalPurpleColor,
-                child: Text(
-                  '3',
-                  style: Get.textTheme.subtitle2
-                      ?.copyWith(color: AppColors().normalWhiteColor),
-                ),
+                child: Obx(() => SizedBox(
+                      width: 25,
+                      height: 25,
+                      child: Center(
+                        child: AutoSizeText(
+                          controller.savedCounter.value.toString(),
+                          minFontSize: 8,
+                          style: Get.textTheme.subtitle2
+                              ?.copyWith(color: AppColors().normalWhiteColor),
+                        ),
+                      ),
+                    )),
               )
             ]),
           ),
