@@ -1,4 +1,6 @@
+import 'package:cep/presentation/global_widgets/global_bottom_menu_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../core/util/helpers/image_paths.dart';
@@ -14,14 +16,16 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: const GlobalBottomMenuWidget(),
         body: Stack(
           children: [
             Positioned(
-              top: context.height * .08,
+              top: context.height * .04,
               child: SizedBox(
                 width: context.width,
-                child: Image.asset(
+                child: SvgPicture.asset(
                   ImagePaths.MAN_WITH_BACKPACK,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),

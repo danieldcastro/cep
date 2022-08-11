@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/util/helpers/icon_paths.dart';
@@ -22,12 +23,12 @@ class HomeSavedButtonWidget extends GetView<HomeController> {
         child: InkWell(
           borderRadius: BorderRadius.circular(100),
           splashColor: AppColors().lightPurpleColor.withOpacity(.5),
-          onTap: () {},
+          onTap: () => controller.goToHistoryPage(),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(19.25, 18.5, 16, 18.5),
             child:
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Image.asset(IconPaths.BOOKMARK,
+              SvgPicture.asset(IconPaths.BOOKMARK,
                   color: AppColors().lightPurpleColor, width: 20),
               const SizedBox(
                 width: 8,

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cep/presentation/pages/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/util/helpers/icon_paths.dart';
@@ -25,7 +26,7 @@ class HomeSearchCounterWidget extends GetView<HomeController> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
-                  child: Image.asset(IconPaths.SIGNPOST,
+                  child: SvgPicture.asset(IconPaths.SIGNPOST,
                       color: AppColors().secondLightPurpleColor, width: 52),
                 ),
                 Obx(() => Expanded(
