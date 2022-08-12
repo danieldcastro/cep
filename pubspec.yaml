@@ -99,5 +99,10 @@ flutter:
         weight: 500
       - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
         weight: 600
+  - family: Hind
+    fonts:
+      - asset: assets/fonts/hind/Hind-Regular.ttf
+        weight: 400
+  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
