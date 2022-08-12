@@ -1,8 +1,6 @@
-import 'package:logger/logger.dart' as dev_log;
+import '../../infrastructure/contracts/gateways/logger_impl.dart';
 
-var logger = dev_log.Logger(
-  printer: dev_log.PrettyPrinter(),
-);
+final _logger = LoggerImpl();
 
 class GlobalValidationMapFunction {
   static bool checkMap(
@@ -13,17 +11,18 @@ class GlobalValidationMapFunction {
       if (map.containsKey(currentKey)) {
         if (map[currentKey] != null) {
           if (map[currentKey].toString() == '') {
-            logger.w(
+            _logger.warning(
               'Map key "$currentKey" has a empty value in class "$className"',
             );
           }
         } else {
-          logger.e(
+          _logger.error(
               'Map key "$currentKey" has a null value in class "$className"');
           return false;
         }
       } else {
-        logger.e('Map key "$currentKey" was not found in class "$className"');
+        _logger
+            .error('Map key "$currentKey" was not found in class "$className"');
         return false;
       }
     }
