@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 
 import '../../global_widgets/global_bottom_menu_widget.dart';
 import 'controllers/search_controller.dart';
+import 'widgets/body/search_address_title_widget.dart';
+import 'widgets/body/search_address_widget.dart';
+import 'widgets/body/search_favorite_button_widget.dart';
 import 'widgets/header/search_subtitle_widget.dart';
 import 'widgets/header/search_textfield_widget.dart';
 import 'widgets/header/search_title_widget.dart';
@@ -33,15 +36,23 @@ class SearchPage extends GetView<SearchController> {
                     ],
                   )),
             ),
-            Center(
-              child: Column(
-                children: [
-                  Row(
+            Expanded(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
                     children: const [
-                      Text('Endereço'),
+                      SearchAddressTitleWidget(),
+                      SizedBox(height: 17),
+                      SearchAddressWidget(),
+                      SizedBox(height: 29),
+                      SearchFavoriteButtonWidget()
                     ],
-                  )
-                ],
+                  ),
+                ),
               ),
             )
           ],
