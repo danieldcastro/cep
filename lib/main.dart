@@ -1,3 +1,4 @@
+import 'package:cep/core/bindings/initial_binding.dart';
 import 'package:cep/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: Get.deviceLocale,
       title: 'CEP',
+      initialBinding: InitialBinding(),
       defaultTransition: Transition.fadeIn,
       theme: AppTheme.theme,
     );
