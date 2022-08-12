@@ -11,6 +11,7 @@ class AppTheme {
   static ThemeData get theme => ThemeData(
         primaryColor: AppColors().primaryColor,
         backgroundColor: AppColors().normalWhiteColor,
+        primarySwatch: AppColors().primarySwatch,
         textTheme: ConfigTheme.textTheme,
         scaffoldBackgroundColor: AppColors().normalWhiteColor,
         brightness: Brightness.light,
