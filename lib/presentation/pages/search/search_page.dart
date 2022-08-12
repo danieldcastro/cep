@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 import '../../global_widgets/global_bottom_menu_widget.dart';
 import 'controllers/search_controller.dart';
-import 'widgets/search_subtitle_widget.dart';
-import 'widgets/search_textfield_widget.dart';
-import 'widgets/search_title_widget.dart';
+import 'widgets/header/search_subtitle_widget.dart';
+import 'widgets/header/search_textfield_widget.dart';
+import 'widgets/header/search_title_widget.dart';
 
 class SearchPage extends GetView<SearchController> {
   const SearchPage({Key? key}) : super(key: key);
@@ -33,6 +33,17 @@ class SearchPage extends GetView<SearchController> {
                     ],
                   )),
             ),
+            Center(
+              child: Column(
+                children: [
+                  Row(
+                    children: const [
+                      Text('Endereço'),
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

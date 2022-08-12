@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../theme/app_colors.dart';
+import '../../../../theme/app_colors.dart';
 
 class SearchTitleWidget extends StatelessWidget {
   const SearchTitleWidget({

@@ -5,8 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-import '../../../../core/util/helpers/icon_paths.dart';
-import '../../../theme/app_colors.dart';
+import '../../../../../core/util/helpers/icon_paths.dart';
+import '../../../../theme/app_colors.dart';
 
 class SearchTextfieldWidget extends GetView<SearchController> {
   const SearchTextfieldWidget({
