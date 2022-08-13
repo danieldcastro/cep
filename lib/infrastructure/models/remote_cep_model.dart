@@ -4,14 +4,12 @@ class RemoteCepModel {
   String cep;
   String street;
   String complement;
-  String neighborhood;
   String city;
   String uf;
   RemoteCepModel({
     required this.cep,
     required this.street,
     required this.complement,
-    required this.neighborhood,
     required this.city,
     required this.uf,
   });
@@ -22,7 +20,6 @@ class RemoteCepModel {
           'cep',
           'logradouro',
           'complemento',
-          'bairro',
           'localidade',
           'uf',
         ],
@@ -33,7 +30,6 @@ class RemoteCepModel {
               cep: json["cep"] as String,
               street: json["logradouro"] as String,
               complement: json["complemento"] as String,
-              neighborhood: json["bairro"] as String,
               city: json["localidade"] as String,
               uf: json["uf"] as String,
             )
@@ -43,7 +39,6 @@ class RemoteCepModel {
         cep: '',
         street: '',
         complement: '',
-        neighborhood: '',
         city: '',
         uf: '',
       );
@@ -56,7 +51,6 @@ class RemoteCepModel {
         other.cep == cep &&
         other.street == street &&
         other.complement == complement &&
-        other.neighborhood == neighborhood &&
         other.city == city &&
         other.uf == uf;
   }
@@ -66,13 +60,12 @@ class RemoteCepModel {
     return cep.hashCode ^
         street.hashCode ^
         complement.hashCode ^
-        neighborhood.hashCode ^
         city.hashCode ^
         uf.hashCode;
   }
 
   @override
   String toString() {
-    return 'RemoteCepModel(cep: $cep, street: $street, complement: $complement, neighborhood: $neighborhood, city: $city, uf: $uf)';
+    return 'RemoteCepModel(cep: $cep, street: $street, complement: $complement, city: $city, uf: $uf)';
   }
 }
