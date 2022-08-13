@@ -1,11 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:logger/logger.dart' as dev_log;
 
 import '../../../domain/contracts/gateways/http_service.dart';
+import 'logger_impl.dart';
 
-var logger = dev_log.Logger(
-  printer: dev_log.PrettyPrinter(),
-);
+final _logger = LoggerImpl();
 
 class DioService implements HttpService {
   final _client = Dio();
@@ -38,10 +36,10 @@ class DioService implements HttpService {
       required Response<dynamic> response,
       required String method,
       required String statusCode}) {
-    logger.i('############### $method ###############');
-    logger.i('URL: $url');
-    logger.i('StatusCode: $statusCode');
-    logger.i('RESPONSE: ${response.data}');
-    logger.i('######################################');
+    _logger.info('############### $method ###############');
+    _logger.info('URL: $url');
+    _logger.info('StatusCode: $statusCode');
+    _logger.info('RESPONSE: ${response.data}');
+    _logger.info('######################################');
   }
 }
