@@ -1,9 +1,11 @@
 import 'package:cep/core/util/global_show_snackbar_function.dart';
+import 'package:cep/core/util/helpers/storage_keys.dart';
 import 'package:cep/domain/entities/cep_entity.dart';
 import 'package:cep/domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase.dart';
 import 'package:cep/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../../domain/contracts/gateways/my_logger.dart';
 
@@ -18,6 +20,8 @@ class SearchController extends GetxController {
   final MyLogger _logger;
 
   RxString foundAddress = ''.obs;
+
+  final GetStorage _getStorageBox = GetStorage();
 
   SearchController(
       {required GetCepInfoByCepNumberUsecase cepInfoByCepNumberUsecase,
@@ -38,6 +42,7 @@ class SearchController extends GetxController {
     if (result.isRight) {
       _cepEntity = result.right;
       formatFoundAddress();
+      await saveCepSearchCount();
       isLoading.value = false;
     } else {
       isLoading.value = false;
@@ -46,6 +51,16 @@ class SearchController extends GetxController {
           'Não foi possível procurar o cep $cepNumber',
           color: AppColors().normalRedColor);
     }
+  }
+
+  Future<void> saveCepSearchCount() async {
+    var cepSearched = await _getStorageBox.read(StorageKeys.CEP_SEARCHED);
+
+    cepSearched ??= 0;
+
+    await _getStorageBox.write(StorageKeys.CEP_SEARCHED, cepSearched++);
+
+    _logger.info('cep searched: $cepSearched');
   }
 
   void formatFoundAddress() {
