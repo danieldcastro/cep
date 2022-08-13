@@ -38,21 +38,28 @@ class SearchPage extends GetView<SearchController> {
             ),
             Expanded(
               child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: const [
-                      SearchAddressTitleWidget(),
-                      SizedBox(height: 17),
-                      SearchAddressWidget(),
-                      SizedBox(height: 29),
-                      SearchFavoriteButtonWidget()
-                    ],
-                  ),
-                ),
+                child: Obx(() => Visibility(
+                      visible: controller.isLoading.value,
+                      replacement: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: Visibility(
+                          visible: controller.foundAddress.value.isNotEmpty,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: const [
+                              SearchAddressTitleWidget(),
+                              SizedBox(height: 17),
+                              SearchAddressWidget(),
+                              SizedBox(height: 29),
+                              SearchFavoriteButtonWidget()
+                            ],
+                          ),
+                        ),
+                      ),
+                      child: const CircularProgressIndicator(),
+                    )),
               ),
             )
           ],

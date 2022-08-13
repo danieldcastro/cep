@@ -1,14 +1,15 @@
+import 'package:cep/presentation/pages/search/controllers/search_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SearchAddressWidget extends StatelessWidget {
+class SearchAddressWidget extends GetView<SearchController> {
   const SearchAddressWidget({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text('Rua Indaial - até 583 - Itajaí SC - CEP 88303-301',
-        style: Get.textTheme.bodyText1);
+    return Obx(() =>
+        Text(controller.foundAddress.value, style: Get.textTheme.bodyText1));
   }
 }

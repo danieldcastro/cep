@@ -55,8 +55,9 @@ class SearchTextfieldWidget extends GetView<SearchController> {
         LengthLimitingTextInputFormatter(8),
         MaskTextInputFormatter(
           mask: '#####-###',
-        )
+        ),
       ],
+      onSubmitted: (string) => controller.submitSearch(),
     );
   }
 }
