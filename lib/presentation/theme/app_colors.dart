@@ -19,6 +19,7 @@ class AppColors {
   Color normalBlueColor = const Color(0xFF2E179D);
   Color darkBlueColor = const Color(0xFF0d0b4e);
   Color normalYellowColor = const Color(0xFFEAB701);
+  Color normalRedColor = const Color(0xFFD0021B);
 
   MaterialColor primarySwatch = const MaterialColor(0xFF6D51FF, {
     50: Color(0xFFF5F5F8),
