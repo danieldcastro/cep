@@ -1,6 +1,6 @@
 import 'package:cep/domain/contracts/repositories/get_cep_repository.dart';
 import 'package:cep/domain/entities/cep_entity.dart';
-import 'package:either_dart/src/either.dart';
+import 'package:either_dart/either.dart';
 
 import 'get_cep_info_by_cep_number_usecase.dart';
 
