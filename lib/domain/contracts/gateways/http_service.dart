@@ -1,5 +1,8 @@
+import 'package:cep/domain/contracts/gateways/my_logger.dart';
+
 abstract class HttpService {
   Future<HttpService> getInstance();
+  MyLogger getLogger();
 
   Future<HttpResponse> get({required String url});
 }

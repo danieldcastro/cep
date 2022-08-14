@@ -1,4 +1,5 @@
 abstract class MyLogger {
+  Future<MyLogger> getInstance();
   void debug(dynamic message, [dynamic error, StackTrace? stackTrace]);
   void info(dynamic message, [dynamic error, StackTrace? stackTrace]);
   void warning(dynamic message, [dynamic error, StackTrace? stackTrace]);
