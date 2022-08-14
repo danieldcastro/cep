@@ -18,23 +18,31 @@ class HistoryPage extends GetView<HistoryController> {
         body: Stack(
           children: [
             const HistoryBackgroundWidget(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const HistoryTitleWidget(),
-                const SizedBox(height: 25),
-                Expanded(
-                  child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 32),
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: 10,
-                    itemBuilder: (_, index) {
-                      return const HistoryAddressCardWidget();
-                    },
+            Obx(() => Visibility(
+                  visible: controller.isLoading.value,
+                  replacement: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const HistoryTitleWidget(),
+                      const SizedBox(height: 25),
+                      Expanded(
+                        child: Obx(
+                          () => ListView.builder(
+                            padding: const EdgeInsets.symmetric(horizontal: 32),
+                            physics: const BouncingScrollPhysics(),
+                            itemCount: controller.myFavorites.length,
+                            itemBuilder: (_, index) {
+                              var favorite = controller.myFavorites[index];
+                              return HistoryAddressCardWidget(
+                                  favorite: favorite);
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
+                  child: const Center(child: CircularProgressIndicator()),
+                )),
           ],
         ),
       ),
