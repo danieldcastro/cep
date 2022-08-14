@@ -5,7 +5,8 @@ import 'package:cep/infrastructure/provider/local_datasource.dart';
 class LocalDatasourceImpl implements LocalDatasource {
   final SqliteFavorite _sqLiteFavorite;
 
-  LocalDatasourceImpl(this._sqLiteFavorite);
+  LocalDatasourceImpl({required SqliteFavorite sqLiteFavorite})
+      : _sqLiteFavorite = sqLiteFavorite;
 
   @override
   Future<int> delete({required int id}) async {

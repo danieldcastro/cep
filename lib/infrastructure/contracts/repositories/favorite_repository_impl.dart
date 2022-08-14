@@ -6,7 +6,8 @@ import 'package:either_dart/either.dart';
 class FavoriteRepositoryImpl implements FavoriteRepository {
   final LocalDatasource _datasource;
 
-  FavoriteRepositoryImpl(this._datasource);
+  FavoriteRepositoryImpl({required LocalDatasource datasource})
+      : _datasource = datasource;
 
   @override
   Future<Either<Exception, int>> delete(int id) async {

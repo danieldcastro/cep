@@ -16,7 +16,7 @@ class SearchBinding implements Bindings {
   @override
   void dependencies() {
     Get.put<InsertFavoriteUsecase>(
-      InsertFavoriteUsecaseImpl(Get.find<FavoriteRepository>()),
+      InsertFavoriteUsecaseImpl(repository: Get.find<FavoriteRepository>()),
     );
 
     Get.put<GetCepRepository>(GetCepRepositoryImpl(datasource: Get.find()));

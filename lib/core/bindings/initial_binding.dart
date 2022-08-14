@@ -35,15 +35,16 @@ class InitialBinding implements Bindings {
 
     Get.put<SqliteFavorite>(SqliteFavoriteImpl(), permanent: true);
 
-    Get.put<LocalDatasource>(LocalDatasourceImpl(Get.find<SqliteFavorite>()));
+    Get.put<LocalDatasource>(
+        LocalDatasourceImpl(sqLiteFavorite: Get.find<SqliteFavorite>()));
     Get.put<FavoriteRepository>(
-      FavoriteRepositoryImpl(Get.find<LocalDatasource>()),
+      FavoriteRepositoryImpl(datasource: Get.find<LocalDatasource>()),
     );
     Get.put<FindFavoriteUsecase>(
-      FindFavoriteUsecaseImpl(Get.find<FavoriteRepository>()),
+      FindFavoriteUsecaseImpl(repository: Get.find<FavoriteRepository>()),
     );
     Get.put<DeleteFavoriteByIdUsecase>(
-      DeleteFavoriteByIdUsecaseImpl(Get.find<FavoriteRepository>()),
+      DeleteFavoriteByIdUsecaseImpl(repository: Get.find<FavoriteRepository>()),
     );
   }
 }

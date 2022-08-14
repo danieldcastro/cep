@@ -7,7 +7,8 @@ import 'find_favorite_usecase.dart';
 class FindFavoriteUsecaseImpl implements FindFavoriteUsecase {
   final FavoriteRepository _repository;
 
-  FindFavoriteUsecaseImpl(this._repository);
+  FindFavoriteUsecaseImpl({required FavoriteRepository repository})
+      : _repository = repository;
 
   @override
   Future<Either<Exception, List<CepEntity>>> call() async {

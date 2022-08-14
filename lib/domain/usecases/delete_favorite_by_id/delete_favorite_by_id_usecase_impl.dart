@@ -6,7 +6,8 @@ import 'delete_favorite_by_id_usecase.dart';
 class DeleteFavoriteByIdUsecaseImpl implements DeleteFavoriteByIdUsecase {
   final FavoriteRepository _repository;
 
-  DeleteFavoriteByIdUsecaseImpl(this._repository);
+  DeleteFavoriteByIdUsecaseImpl({required FavoriteRepository repository})
+      : _repository = repository;
 
   @override
   Future<Either<Exception, void>> call(int id) async {

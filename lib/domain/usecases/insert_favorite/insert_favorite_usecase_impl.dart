@@ -7,7 +7,8 @@ import 'package:either_dart/either.dart';
 class InsertFavoriteUsecaseImpl implements InsertFavoriteUsecase {
   final FavoriteRepository _repository;
 
-  InsertFavoriteUsecaseImpl(this._repository);
+  InsertFavoriteUsecaseImpl({required FavoriteRepository repository})
+      : _repository = repository;
 
   @override
   Future<Either<Exception, int>> call(CepEntity entity) async {
