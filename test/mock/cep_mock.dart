@@ -1,5 +1,6 @@
 import 'package:cep/domain/entities/cep_entity.dart';
 import 'package:cep/infrastructure/models/remote_cep_model.dart';
+import 'package:cep/infrastructure/models/remote_error_model.dart';
 
 class CepMock {
   static const String validCep = '01001000';
@@ -21,15 +22,24 @@ class CepMock {
     'uf': 'SP',
   };
 
+  static const Map<String, dynamic> validRemoteErrorJson = {"erro": "true"};
+
+  static const Map<String, dynamic> invalidRemoteErrorJson = {};
+
   static const Map<String, dynamic> invalidCepJson = {};
 
+  static RemoteErrorModel validRemoteErrorModel =
+      RemoteErrorModel(error: "true");
+
+  static RemoteErrorModel emptyRemoteErrorModel = RemoteErrorModel(error: "");
+
   static RemoteCepModel validRemoteCepModel = RemoteCepModel(
-      cep: '01001-000',
-      street: 'Praça da Sé',
-      complement: 'lado ímpar',
-      city: 'São Paulo',
-      uf: 'SP',
-      id: 1);
+    cep: '01001-000',
+    street: 'Praça da Sé',
+    complement: 'lado ímpar',
+    city: 'São Paulo',
+    uf: 'SP',
+  );
 
   static RemoteCepModel invalidRemoteCepModel = RemoteCepModel(
       cep: '', street: '', complement: '', city: '', uf: '', id: 0);
