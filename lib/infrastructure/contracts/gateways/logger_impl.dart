@@ -5,6 +5,7 @@ import '../../../domain/contracts/gateways/my_logger.dart';
 
 class LoggerImpl extends GetxService implements MyLogger {
   final Logger _logger = Logger();
+  List<String> _messages = [];
 
   Future<LoggerImpl> getInstance() async {
     info('servico de log iniciado!!!');
@@ -29,5 +30,16 @@ class LoggerImpl extends GetxService implements MyLogger {
   @override
   void warning(message, [error, StackTrace? stackTrace]) {
     _logger.w(message, error, stackTrace);
+  }
+
+  @override
+  void append(message) {
+    _messages.add(message);
+  }
+
+  @override
+  void closeAppend() {
+    info(_messages.join('\n'));
+    _messages = [];
   }
 }
