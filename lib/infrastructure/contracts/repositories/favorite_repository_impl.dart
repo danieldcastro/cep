@@ -13,7 +13,7 @@ class FavoriteRepositoryImpl implements FavoriteRepository {
   Future<Either<Exception, int>> delete(int id) async {
     final result = await _datasource.delete(id: id);
     try {
-      return Right(result);
+      return Right(result.right);
     } on Exception {
       return Left(Exception('Failed to access datasource'));
     }
@@ -23,7 +23,7 @@ class FavoriteRepositoryImpl implements FavoriteRepository {
   Future<Either<Exception, List<RemoteCepModel>>> find() async {
     final result = await _datasource.find();
     try {
-      return Right(result);
+      return Right(result.right);
     } on Exception {
       return Left(Exception('Failed to access datasource'));
     }
@@ -34,7 +34,7 @@ class FavoriteRepositoryImpl implements FavoriteRepository {
     final result = await _datasource.insert(model: model);
 
     try {
-      return Right(result);
+      return Right(result.right);
     } on Exception {
       return Left(Exception('Failed to access datasource'));
     }
