@@ -1,3 +1,5 @@
+import 'package:cep/domain/entities/cep_entity.dart';
+import 'package:cep/presentation/pages/history/controllers/history_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -5,9 +7,12 @@ import 'package:get/get.dart';
 import '../../../../core/util/helpers/icon_paths.dart';
 import '../../../theme/app_colors.dart';
 
-class HistoryAddressCardWidget extends StatelessWidget {
+class HistoryAddressCardWidget extends GetView<HistoryController> {
+  final CepEntity favorite;
+
   const HistoryAddressCardWidget({
     Key? key,
+    required this.favorite,
   }) : super(key: key);
 
   @override
@@ -25,26 +30,32 @@ class HistoryAddressCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '13219-070',
+                favorite.cep,
                 style: Get.textTheme.bodyText1?.copyWith(
                   fontWeight: FontWeight.w500,
                   height: 1.3,
                   color: AppColors().fifthNormalGreyColor,
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset(
-                  IconPaths.TRASH,
-                  color: Get.theme.primaryColor,
-                  width: 19.5,
-                  height: 20.5,
+              InkWell(
+                radius: 5,
+                onTap: () => controller.deleteFavoriteById(favorite.id),
+                borderRadius: BorderRadius.circular(5),
+                child: Ink(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: SvgPicture.asset(
+                    IconPaths.TRASH,
+                    color: Get.theme.primaryColor,
+                    width: 19.5,
+                    height: 20.5,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               )
             ],
           ),
           Text(
-            'Rua Indaial - até 583 - Itajaí SC - CEP 88303-301',
+            controller.formatAddressString(favorite),
             style: Get.textTheme.subtitle2?.copyWith(
               height: 1.5,
               color: AppColors().fifthNormalGreyColor,
