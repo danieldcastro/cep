@@ -1,3 +1,4 @@
+import 'package:cep/domain/contracts/gateways/my_logger.dart';
 import 'package:dio/dio.dart';
 
 import '../../../domain/contracts/gateways/http_service.dart';
@@ -11,6 +12,11 @@ class DioService implements HttpService {
   @override
   Future<DioService> getInstance() async {
     return this;
+  }
+
+  @override
+  MyLogger getLogger() {
+    return _logger;
   }
 
   @override
