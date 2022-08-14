@@ -7,6 +7,7 @@ class LoggerImpl extends GetxService implements MyLogger {
   final Logger _logger = Logger();
   List<String> _messages = [];
 
+  @override
   Future<LoggerImpl> getInstance() async {
     info('servico de log iniciado!!!');
     return this;
