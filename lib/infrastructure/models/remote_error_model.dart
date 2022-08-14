@@ -19,4 +19,21 @@ class RemoteErrorModel {
       error: '',
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is RemoteErrorModel && other.error == error;
+  }
+
+  @override
+  int get hashCode {
+    return error.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'RemoteErrorModel{error: $error}';
+  }
 }
