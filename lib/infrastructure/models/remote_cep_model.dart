@@ -1,12 +1,15 @@
 import 'package:cep/core/util/global_validation_map_function.dart';
+import 'package:cep/domain/entities/cep_entity.dart';
 
 class RemoteCepModel {
+  int? id;
   String cep;
   String street;
   String complement;
   String city;
   String uf;
   RemoteCepModel({
+    this.id,
     required this.cep,
     required this.street,
     required this.complement,
@@ -35,7 +38,29 @@ class RemoteCepModel {
             )
           : RemoteCepModel.empty();
 
+  factory RemoteCepModel.fromMap(Map<String, dynamic> map) {
+    return RemoteCepModel(
+      id: map['id'],
+      cep: map["cep"] as String,
+      street: map["street"] as String,
+      complement: map["complement"] as String,
+      city: map["city"] as String,
+      uf: map["uf"] as String,
+    );
+  }
+
+  static Map<String, dynamic> toJson(CepEntity entity) {
+    return {
+      'cep': entity.cep,
+      'street': entity.street,
+      'complement': entity.complement,
+      'city': entity.city,
+      'uf': entity.uf,
+    };
+  }
+
   factory RemoteCepModel.empty() => RemoteCepModel(
+        id: 0,
         cep: '',
         street: '',
         complement: '',
@@ -48,6 +73,7 @@ class RemoteCepModel {
     if (identical(this, other)) return true;
 
     return other is RemoteCepModel &&
+        other.id == id &&
         other.cep == cep &&
         other.street == street &&
         other.complement == complement &&
@@ -57,7 +83,8 @@ class RemoteCepModel {
 
   @override
   int get hashCode {
-    return cep.hashCode ^
+    return id.hashCode ^
+        cep.hashCode ^
         street.hashCode ^
         complement.hashCode ^
         city.hashCode ^
@@ -66,6 +93,6 @@ class RemoteCepModel {
 
   @override
   String toString() {
-    return 'RemoteCepModel(cep: $cep, street: $street, complement: $complement, city: $city, uf: $uf)';
+    return 'RemoteCepModel(id: $id, cep: $cep, street: $street, complement: $complement, city: $city, uf: $uf)';
   }
 }
