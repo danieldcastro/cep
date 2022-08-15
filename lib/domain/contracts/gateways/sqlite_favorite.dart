@@ -1,4 +1,4 @@
-import 'package:cep/core/response/sqlite_response.dart';
+import '../../../core/response/sqlite_response.dart';
 
 abstract class SqliteFavorite {
   Future<SqliteResponse> find({Map<String, dynamic>? parameter});

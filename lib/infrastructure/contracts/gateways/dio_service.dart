@@ -1,7 +1,7 @@
-import 'package:cep/domain/contracts/gateways/my_logger.dart';
 import 'package:dio/dio.dart';
 
 import '../../../domain/contracts/gateways/http_service.dart';
+import '../../../domain/contracts/gateways/my_logger.dart';
 import 'logger_impl.dart';
 
 final _logger = LoggerImpl();

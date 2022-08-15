@@ -1,11 +1,11 @@
-import 'package:cep/domain/entities/cep_entity.dart';
-import 'package:cep/presentation/pages/history/controllers/history_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/util/helpers/icon_paths.dart';
+import '../../../../domain/entities/cep_entity.dart';
 import '../../../theme/app_colors.dart';
+import '../controllers/history_controller.dart';
 
 class HistoryAddressCardWidget extends GetView<HistoryController> {
   final CepEntity favorite;

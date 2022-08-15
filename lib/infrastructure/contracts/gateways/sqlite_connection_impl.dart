@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:cep/domain/contracts/gateways/sqlite_connection.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../../domain/contracts/gateways/sqlite_connection.dart';
 import 'sqlite_favorite_impl.dart';
 
 class SqliteConnectionImpl implements SqliteConnection {

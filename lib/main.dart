@@ -1,12 +1,12 @@
-import 'package:cep/core/bindings/initial_binding.dart';
-import 'package:cep/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'core/bindings/initial_binding.dart';
 import 'presentation/routes/app_pages.dart';
 import 'presentation/routes/routes.dart';
+import 'presentation/theme/app_colors.dart';
 import 'presentation/theme/app_theme.dart';
 
 void main() async {

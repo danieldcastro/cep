@@ -1,17 +1,17 @@
-import 'package:cep/core/util/global_show_snackbar_function.dart';
-import 'package:cep/core/util/helpers/format_address_string.dart';
-import 'package:cep/core/util/helpers/storage_keys.dart';
-import 'package:cep/domain/entities/cep_entity.dart';
-import 'package:cep/domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
-import 'package:cep/domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase.dart';
-import 'package:cep/domain/usecases/insert_favorite/insert_favorite_usecase.dart';
-import 'package:cep/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../../core/util/global_show_snackbar_function.dart';
+import '../../../../core/util/helpers/format_address_string.dart';
+import '../../../../core/util/helpers/storage_keys.dart';
 import '../../../../domain/contracts/gateways/my_logger.dart';
+import '../../../../domain/entities/cep_entity.dart';
+import '../../../../domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
 import '../../../../domain/usecases/find_favorite/find_favorite_usecase.dart';
+import '../../../../domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase.dart';
+import '../../../../domain/usecases/insert_favorite/insert_favorite_usecase.dart';
+import '../../../theme/app_colors.dart';
 
 class SearchController extends GetxController {
   CepEntity _cepEntity = CepEntity.empty();

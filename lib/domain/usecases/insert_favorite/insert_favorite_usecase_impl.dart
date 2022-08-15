@@ -1,8 +1,9 @@
-import 'package:cep/domain/contracts/repositories/favorite_repository.dart';
-import 'package:cep/domain/entities/cep_entity.dart';
-import 'package:cep/domain/usecases/insert_favorite/insert_favorite_usecase.dart';
-import 'package:cep/infrastructure/models/remote_cep_model.dart';
 import 'package:either_dart/either.dart';
+
+import '../../../infrastructure/models/remote_cep_model.dart';
+import '../../contracts/repositories/favorite_repository.dart';
+import '../../entities/cep_entity.dart';
+import 'insert_favorite_usecase.dart';
 
 class InsertFavoriteUsecaseImpl implements InsertFavoriteUsecase {
   final FavoriteRepository _repository;

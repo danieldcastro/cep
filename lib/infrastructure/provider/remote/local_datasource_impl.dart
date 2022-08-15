@@ -1,7 +1,8 @@
-import 'package:cep/domain/contracts/gateways/sqlite_favorite.dart';
-import 'package:cep/infrastructure/models/remote_cep_model.dart';
-import 'package:cep/infrastructure/provider/local_datasource.dart';
 import 'package:either_dart/either.dart';
+
+import '../../../domain/contracts/gateways/sqlite_favorite.dart';
+import '../../models/remote_cep_model.dart';
+import '../local_datasource.dart';
 
 class LocalDatasourceImpl implements LocalDatasource {
   final SqliteFavorite _sqLiteFavorite;

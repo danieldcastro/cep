@@ -1,7 +1,7 @@
-import 'package:cep/domain/entities/cep_entity.dart';
 import 'package:either_dart/either.dart';
 
 import '../../../domain/contracts/repositories/get_cep_repository.dart';
+import '../../../domain/entities/cep_entity.dart';
 import '../../errors/failure_request.dart';
 import '../../models/remote_cep_model.dart';
 import '../../models/remote_error_model.dart';

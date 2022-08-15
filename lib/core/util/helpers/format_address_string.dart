@@ -1,4 +1,4 @@
-import 'package:cep/domain/entities/cep_entity.dart';
+import '../../../domain/entities/cep_entity.dart';
 
 class FormatAddressString {
   static String formatByCepEntity(CepEntity cepEntity) {

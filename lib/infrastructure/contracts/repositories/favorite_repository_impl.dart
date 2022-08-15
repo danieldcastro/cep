@@ -1,7 +1,8 @@
-import 'package:cep/domain/contracts/repositories/favorite_repository.dart';
-import 'package:cep/infrastructure/models/remote_cep_model.dart';
-import 'package:cep/infrastructure/provider/local_datasource.dart';
 import 'package:either_dart/either.dart';
+
+import '../../../domain/contracts/repositories/favorite_repository.dart';
+import '../../models/remote_cep_model.dart';
+import '../../provider/local_datasource.dart';
 
 class FavoriteRepositoryImpl implements FavoriteRepository {
   final LocalDatasource _datasource;

@@ -1,5 +1,6 @@
-import 'package:cep/infrastructure/models/remote_cep_model.dart';
 import 'package:either_dart/either.dart';
+
+import '../models/remote_cep_model.dart';
 
 abstract class LocalDatasource {
   Future<Either<Exception, List<RemoteCepModel>>> find(

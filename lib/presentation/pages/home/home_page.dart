@@ -1,9 +1,9 @@
-import 'package:cep/presentation/global_widgets/global_bottom_menu_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../core/util/helpers/image_paths.dart';
+import '../../global_widgets/global_bottom_menu_widget.dart';
 import 'controllers/home_controller.dart';
 import 'widgets/home_saved_button_widget.dart';
 import 'widgets/home_search_counter_widget.dart';

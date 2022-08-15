@@ -1,11 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cep/presentation/pages/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/util/helpers/icon_paths.dart';
 import '../../../theme/app_colors.dart';
+import '../controllers/home_controller.dart';
 
 class HomeSearchCounterWidget extends GetView<HomeController> {
   const HomeSearchCounterWidget({

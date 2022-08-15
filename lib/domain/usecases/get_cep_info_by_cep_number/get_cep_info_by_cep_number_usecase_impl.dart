@@ -1,7 +1,7 @@
-import 'package:cep/domain/contracts/repositories/get_cep_repository.dart';
-import 'package:cep/domain/entities/cep_entity.dart';
 import 'package:either_dart/either.dart';
 
+import '../../contracts/repositories/get_cep_repository.dart';
+import '../../entities/cep_entity.dart';
 import 'get_cep_info_by_cep_number_usecase.dart';
 
 class GetCepInfoByCepNumberUsecaseImpl implements GetCepInfoByCepNumberUsecase {

@@ -1,15 +1,15 @@
-import 'package:cep/domain/contracts/gateways/my_logger.dart';
-import 'package:cep/domain/contracts/repositories/favorite_repository.dart';
-import 'package:cep/domain/contracts/repositories/get_cep_repository.dart';
-import 'package:cep/domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
-import 'package:cep/domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase.dart';
-import 'package:cep/domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase_impl.dart';
-import 'package:cep/domain/usecases/insert_favorite/insert_favorite_usecase.dart';
-import 'package:cep/domain/usecases/insert_favorite/insert_favorite_usecase_impl.dart';
-import 'package:cep/infrastructure/contracts/repositories/get_cep_repository_impl.dart';
 import 'package:get/get.dart';
 
+import '../../domain/contracts/gateways/my_logger.dart';
+import '../../domain/contracts/repositories/favorite_repository.dart';
+import '../../domain/contracts/repositories/get_cep_repository.dart';
+import '../../domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
 import '../../domain/usecases/find_favorite/find_favorite_usecase.dart';
+import '../../domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase.dart';
+import '../../domain/usecases/get_cep_info_by_cep_number/get_cep_info_by_cep_number_usecase_impl.dart';
+import '../../domain/usecases/insert_favorite/insert_favorite_usecase.dart';
+import '../../domain/usecases/insert_favorite/insert_favorite_usecase_impl.dart';
+import '../../infrastructure/contracts/repositories/get_cep_repository_impl.dart';
 import '../pages/search/controllers/search_controller.dart';
 
 class SearchBinding implements Bindings {

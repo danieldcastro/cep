@@ -1,5 +1,6 @@
-import 'package:cep/infrastructure/models/remote_cep_model.dart';
 import 'package:either_dart/either.dart';
+
+import '../../../infrastructure/models/remote_cep_model.dart';
 
 abstract class FavoriteRepository {
   Future<Either<Exception, int>> insert(Map<String, dynamic> model);

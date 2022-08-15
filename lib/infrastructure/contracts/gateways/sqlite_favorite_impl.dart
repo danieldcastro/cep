@@ -1,8 +1,8 @@
-import 'package:cep/core/response/sqlite_response.dart';
-import 'package:cep/domain/contracts/gateways/my_logger.dart';
-import 'package:cep/domain/contracts/gateways/sqlite_favorite.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../../core/response/sqlite_response.dart';
+import '../../../domain/contracts/gateways/my_logger.dart';
+import '../../../domain/contracts/gateways/sqlite_favorite.dart';
 import 'logger_impl.dart';
 import 'sqlite_connection_impl.dart';
 

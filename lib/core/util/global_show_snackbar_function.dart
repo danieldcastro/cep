@@ -1,6 +1,7 @@
-import 'package:cep/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../presentation/theme/app_colors.dart';
 
 class GlobalShowSnackbarFunction {
   show(String message, {Color? color}) {

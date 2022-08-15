@@ -1,6 +1,6 @@
-import 'package:cep/domain/contracts/repositories/favorite_repository.dart';
 import 'package:either_dart/either.dart';
 
+import '../../contracts/repositories/favorite_repository.dart';
 import 'delete_favorite_by_id_usecase.dart';
 
 class DeleteFavoriteByIdUsecaseImpl implements DeleteFavoriteByIdUsecase {

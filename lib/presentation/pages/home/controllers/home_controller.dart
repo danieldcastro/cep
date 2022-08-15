@@ -1,9 +1,9 @@
-import 'package:cep/domain/contracts/gateways/my_logger.dart';
-import 'package:cep/domain/usecases/find_favorite/find_favorite_usecase.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../../core/util/helpers/storage_keys.dart';
+import '../../../../domain/contracts/gateways/my_logger.dart';
+import '../../../../domain/usecases/find_favorite/find_favorite_usecase.dart';
 import '../../../routes/routes.dart';
 
 class HomeController extends GetxController {

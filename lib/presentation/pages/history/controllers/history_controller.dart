@@ -1,9 +1,10 @@
-import 'package:cep/core/util/helpers/format_address_string.dart';
-import 'package:cep/domain/contracts/gateways/my_logger.dart';
-import 'package:cep/domain/entities/cep_entity.dart';
-import 'package:cep/domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
-import 'package:cep/domain/usecases/find_favorite/find_favorite_usecase.dart';
 import 'package:get/get.dart';
+
+import '../../../../core/util/helpers/format_address_string.dart';
+import '../../../../domain/contracts/gateways/my_logger.dart';
+import '../../../../domain/entities/cep_entity.dart';
+import '../../../../domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
+import '../../../../domain/usecases/find_favorite/find_favorite_usecase.dart';
 
 class HistoryController extends GetxController {
   final FindFavoriteUsecase _findFavoriteUsecase;

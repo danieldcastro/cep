@@ -1,7 +1,7 @@
-import 'package:cep/domain/contracts/repositories/favorite_repository.dart';
-import 'package:cep/domain/entities/cep_entity.dart';
 import 'package:either_dart/either.dart';
 
+import '../../contracts/repositories/favorite_repository.dart';
+import '../../entities/cep_entity.dart';
 import 'find_favorite_usecase.dart';
 
 class FindFavoriteUsecaseImpl implements FindFavoriteUsecase {

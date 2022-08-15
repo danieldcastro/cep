@@ -1,8 +1,8 @@
-import 'package:cep/core/util/helpers/icon_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../core/util/helpers/icon_paths.dart';
 import '../routes/routes.dart';
 import '../theme/app_colors.dart';
 

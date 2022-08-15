@@ -1,5 +1,5 @@
-import 'package:cep/core/util/global_validation_map_function.dart';
-import 'package:cep/domain/entities/cep_entity.dart';
+import '../../core/util/global_validation_map_function.dart';
+import '../../domain/entities/cep_entity.dart';
 
 class RemoteCepModel {
   int? id;

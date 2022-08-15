@@ -1,4 +1,4 @@
-import 'package:cep/core/util/global_validation_map_function.dart';
+import '../../core/util/global_validation_map_function.dart';
 
 class RemoteErrorModel {
   String error;

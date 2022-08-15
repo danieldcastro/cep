@@ -1,18 +1,18 @@
-import 'package:cep/domain/contracts/gateways/sqlite_connection.dart';
-import 'package:cep/domain/contracts/gateways/sqlite_favorite.dart';
-import 'package:cep/infrastructure/contracts/gateways/dio_service.dart';
-import 'package:cep/infrastructure/contracts/gateways/sqlite_connection_impl.dart';
-import 'package:cep/infrastructure/contracts/gateways/sqlite_favorite_impl.dart';
 import 'package:get/get.dart';
 
 import '../../domain/contracts/gateways/http_service.dart';
 import '../../domain/contracts/gateways/my_logger.dart';
+import '../../domain/contracts/gateways/sqlite_connection.dart';
+import '../../domain/contracts/gateways/sqlite_favorite.dart';
 import '../../domain/contracts/repositories/favorite_repository.dart';
 import '../../domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase.dart';
 import '../../domain/usecases/delete_favorite_by_id/delete_favorite_by_id_usecase_impl.dart';
 import '../../domain/usecases/find_favorite/find_favorite_usecase.dart';
 import '../../domain/usecases/find_favorite/find_favorite_usecase_impl.dart';
+import '../../infrastructure/contracts/gateways/dio_service.dart';
 import '../../infrastructure/contracts/gateways/logger_impl.dart';
+import '../../infrastructure/contracts/gateways/sqlite_connection_impl.dart';
+import '../../infrastructure/contracts/gateways/sqlite_favorite_impl.dart';
 import '../../infrastructure/contracts/repositories/favorite_repository_impl.dart';
 import '../../infrastructure/provider/datasource.dart';
 import '../../infrastructure/provider/local_datasource.dart';
