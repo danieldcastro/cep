@@ -21,7 +21,7 @@ class HistoryController extends GetxController {
         _deleteFavoriteUsecase = deleteFavoriteUsecase,
         _logger = logger;
 
-  Future<void> _findAllFavorite() async {
+  Future<void> findAllFavorite() async {
     isLoading.value = true;
     final result = await _findFavoriteUsecase();
 
@@ -43,7 +43,7 @@ class HistoryController extends GetxController {
       _logger.error(result.left.toString());
       return;
     }
-    await _findAllFavorite();
+    await findAllFavorite();
     _logger.debug('SUCCESSFULLY DELETED');
   }
 
@@ -53,6 +53,6 @@ class HistoryController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _findAllFavorite();
+    findAllFavorite();
   }
 }

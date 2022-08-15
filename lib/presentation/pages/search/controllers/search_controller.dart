@@ -20,21 +20,25 @@ class SearchController extends GetxController {
   RxBool isFavoriteButtonPressed = false.obs;
   TextEditingController searchTextFieldController = TextEditingController();
 
+  set cepEntity(CepEntity value) {
+    value = _cepEntity;
+  }
+
   final GetStorage _getStorageBox = GetStorage();
 
-  final GetCepInfoByCepNumberUsecase _cepInfoByCepNumberUsecase;
+  final GetCepInfoByCepNumberUsecase _getCepInfoByCepNumberUsecase;
   final MyLogger _logger;
   final InsertFavoriteUsecase _insertFavoriteUsecase;
   final FindFavoriteUsecase _findFavoriteUsecase;
   final DeleteFavoriteByIdUsecase _deleteFavoriteUsecase;
 
   SearchController(
-      {required GetCepInfoByCepNumberUsecase cepInfoByCepNumberUsecase,
+      {required GetCepInfoByCepNumberUsecase getCepInfoByCepNumberUsecase,
       required InsertFavoriteUsecase insertFavoriteUsecase,
       required FindFavoriteUsecase findFavoriteUsecase,
       required DeleteFavoriteByIdUsecase deleteFavoriteUsecase,
       required MyLogger logger})
-      : _cepInfoByCepNumberUsecase = cepInfoByCepNumberUsecase,
+      : _getCepInfoByCepNumberUsecase = getCepInfoByCepNumberUsecase,
         _insertFavoriteUsecase = insertFavoriteUsecase,
         _deleteFavoriteUsecase = deleteFavoriteUsecase,
         _findFavoriteUsecase = findFavoriteUsecase,
@@ -50,18 +54,18 @@ class SearchController extends GetxController {
     }
   }
 
-  Future<void> _getCepByCepNumber(String cepNumber) async {
+  Future<void> getCepInfoByCepNumber(String cepNumber) async {
     isLoading.value = true;
     _logger.info('searching cep: $cepNumber');
     String cepNumberFormatted = cepNumber.replaceAll('-', '');
-    final result = await _cepInfoByCepNumberUsecase.call(cepNumberFormatted);
+    final result = await _getCepInfoByCepNumberUsecase.call(cepNumberFormatted);
 
     if (result.isRight) {
       _cepEntity = result.right;
       isFavoriteButtonPressed.value = false;
       foundAddress.value = FormatAddressString.formatByCepEntity(_cepEntity);
       await _saveCepSearchCount();
-      _checkIfCepIsAlreadyFavorited();
+      checkIfCepIsAlreadyFavorited();
       isLoading.value = false;
     } else {
       isLoading.value = false;
@@ -89,7 +93,7 @@ class SearchController extends GetxController {
 
   void submitSearch() {
     if (searchTextFieldController.text.length == 9) {
-      _getCepByCepNumber(searchTextFieldController.text);
+      getCepInfoByCepNumber(searchTextFieldController.text);
     }
   }
 
@@ -120,7 +124,7 @@ class SearchController extends GetxController {
     _logger.debug('SUCCESSFULLY DELETED');
   }
 
-  Future<List<CepEntity>> _findAllFavorite() async {
+  Future<List<CepEntity>> findAllFavorite() async {
     final result = await _findFavoriteUsecase();
 
     if (result.isLeft) {
@@ -131,8 +135,8 @@ class SearchController extends GetxController {
     return result.right;
   }
 
-  _checkIfCepIsAlreadyFavorited() {
-    _findAllFavorite().then((list) {
+  checkIfCepIsAlreadyFavorited() {
+    findAllFavorite().then((list) {
       for (var cep in list) {
         if (cep.cep == _cepEntity.cep) {
           isFavoriteButtonPressed.value = true;

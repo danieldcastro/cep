@@ -14,6 +14,8 @@ class HomeController extends GetxController {
 
   RxInt savedCounter = 0.obs;
 
+  GetStorage get storageBox => _getStorageBox;
+
   final GetStorage _getStorageBox = GetStorage();
 
   HomeController({
@@ -26,7 +28,7 @@ class HomeController extends GetxController {
     Get.offNamed(Routes.HISTORY);
   }
 
-  Future<void> _findAllFavorite() async {
+  Future<void> findAllFavorite() async {
     final result = await _findFavoriteUsecase();
 
     if (result.isLeft) {
@@ -38,7 +40,7 @@ class HomeController extends GetxController {
     _logger.debug(result.right);
   }
 
-  void _getSearchCounter() {
+  void getSearchCounter() {
     if (_getStorageBox.read(StorageKeys.CEP_SEARCHED) != null) {
       searchCounter.value = _getStorageBox.read(StorageKeys.CEP_SEARCHED);
     }
@@ -47,7 +49,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _getSearchCounter();
-    _findAllFavorite();
+    getSearchCounter();
+    findAllFavorite();
   }
 }
