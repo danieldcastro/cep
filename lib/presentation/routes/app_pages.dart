@@ -1,8 +1,8 @@
-import 'package:cep/presentation/bindings/history_binding.dart';
-import 'package:cep/presentation/bindings/home_binding.dart';
-import 'package:cep/presentation/bindings/search_binding.dart';
 import 'package:get/get.dart';
 
+import '../bindings/history_binding.dart';
+import '../bindings/home_binding.dart';
+import '../bindings/search_binding.dart';
 import '../pages/pages.dart';
 import 'routes.dart';
 

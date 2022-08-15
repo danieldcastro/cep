@@ -1,12 +1,21 @@
+// ignore_for_file: constant_identifier_names
+
 class IconPaths {
-  static const String bookmark = 'assets/icons/bookmark.png';
-  static const String copy = 'assets/icons/copy.png';
-  static const String heart = 'assets/icons/heart.png';
-  static const String home = 'assets/icons/home.png';
-  static const String menuStack = 'assets/icons/menu_stack.png';
-  static const String people = 'assets/icons/people.png';
-  static const String search = 'assets/icons/search.png';
-  static const String signpost = 'assets/icons/signpost.png';
-  static const String star = 'assets/icons/star.png';
-  static const String trash = 'assets/icons/trash.png';
+  static const String BOOKMARK = 'assets/icons/bookmark.svg';
+  static const String COPY = 'assets/icons/copy.svg';
+  static const String HOME = 'assets/icons/home.svg';
+  static const String SEARCH = 'assets/icons/search.svg';
+  static const String SIGNPOST = 'assets/icons/signpost.svg';
+  static const String STAR = 'assets/icons/star.svg';
+  static const String FILLED_STAR = 'assets/icons/filled_star.svg';
+  static const String TRASH = 'assets/icons/trash.svg';
+
+  String get bookmark => BOOKMARK;
+  String get copy => COPY;
+  String get home => HOME;
+  String get search => SEARCH;
+  String get signpost => SIGNPOST;
+  String get star => STAR;
+  String get filledStar => FILLED_STAR;
+  String get trash => TRASH;
 }
