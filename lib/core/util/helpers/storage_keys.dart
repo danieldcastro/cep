@@ -2,4 +2,6 @@
 
 class StorageKeys {
   static const String CEP_SEARCHED = 'cep_searched';
+
+  String get cepSearched => CEP_SEARCHED;
 }
