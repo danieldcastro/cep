@@ -5,6 +5,19 @@ import 'package:cep/infrastructure/models/remote_error_model.dart';
 class CepMock {
   static const String validCep = '01001000';
 
+  static const Map<String, dynamic> validResponseJson = {
+    "cep": "01001-000",
+    "logradouro": "Praça da Sé",
+    "complemento": "lado ímpar",
+    "bairro": "Sé",
+    "localidade": "São Paulo",
+    "uf": "SP",
+    "ibge": "3550308",
+    "gia": "1004",
+    "ddd": "11",
+    "siafi": "7107"
+  };
+
   static const Map<String, dynamic> validCepJson = {
     'cep': '01001-000',
     'logradouro': 'Praça da Sé',
@@ -64,6 +77,23 @@ class CepMock {
         uf: 'SP',
         id: 0),
     RemoteCepModel(
+        cep: '01001-001',
+        street: 'Praça da Sé',
+        complement: 'lado par',
+        city: 'São Paulo',
+        uf: 'SP',
+        id: 1),
+  ];
+
+  static List<CepEntity> validCepEntityList = [
+    CepEntity(
+        cep: '01001-000',
+        street: 'Praça da Sé',
+        complement: 'lado ímpar',
+        city: 'São Paulo',
+        uf: 'SP',
+        id: 0),
+    CepEntity(
         cep: '01001-001',
         street: 'Praça da Sé',
         complement: 'lado par',
