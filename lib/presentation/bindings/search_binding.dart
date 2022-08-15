@@ -27,7 +27,7 @@ class SearchBinding implements Bindings {
     Get.lazyPut<SearchController>(
       () => SearchController(
         logger: Get.find<MyLogger>(),
-        cepInfoByCepNumberUsecase: Get.find<GetCepInfoByCepNumberUsecase>(),
+        getCepInfoByCepNumberUsecase: Get.find<GetCepInfoByCepNumberUsecase>(),
         insertFavoriteUsecase: Get.find<InsertFavoriteUsecase>(),
         deleteFavoriteUsecase: Get.find<DeleteFavoriteByIdUsecase>(),
         findFavoriteUsecase: Get.find<FindFavoriteUsecase>(),
