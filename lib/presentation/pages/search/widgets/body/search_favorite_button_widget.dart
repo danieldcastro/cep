@@ -50,7 +50,7 @@ class SearchFavoriteButtonWidget extends GetView<SearchController> {
                           padding: const EdgeInsets.only(top: 5.0),
                           child: Text(
                             'Adicionar aos favoritos',
-                            style: Get.textTheme.subtitle1?.copyWith(
+                            style: Get.textTheme.titleMedium?.copyWith(
                                 color: controller.isFavoriteButtonPressed.value
                                     ? AppColors().normalPurpleColor
                                     : AppColors().normalWhiteColor,

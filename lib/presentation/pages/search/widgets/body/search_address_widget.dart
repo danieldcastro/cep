@@ -11,6 +11,6 @@ class SearchAddressWidget extends GetView<SearchController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() =>
-        Text(controller.foundAddress.value, style: Get.textTheme.bodyText1));
+        Text(controller.foundAddress.value, style: Get.textTheme.bodyLarge));
   }
 }

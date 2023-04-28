@@ -10,7 +10,7 @@ class GlobalShowSnackbarFunction {
           child: Container(),
         ),
         titleText: Text(message,
-            style: Get.textTheme.bodyText2!
+            style: Get.textTheme.bodyMedium!
                 .copyWith(color: AppColors().normalWhiteColor)),
         backgroundColor: color?.withOpacity(.87) ??
             AppColors().normalBlackColor.withOpacity(.87),

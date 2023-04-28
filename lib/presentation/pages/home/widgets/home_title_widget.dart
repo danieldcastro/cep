@@ -14,12 +14,12 @@ class HomeTitleWidget extends StatelessWidget {
           text: TextSpan(children: [
         TextSpan(
             text: 'Olá,\n',
-            style:
-                Get.textTheme.headline5?.copyWith(fontWeight: FontWeight.w500)),
+            style: Get.textTheme.headlineSmall
+                ?.copyWith(fontWeight: FontWeight.w500)),
         TextSpan(
             text: 'Bem-vindo',
-            style:
-                Get.textTheme.headline5?.copyWith(fontWeight: FontWeight.w600))
+            style: Get.textTheme.headlineSmall
+                ?.copyWith(fontWeight: FontWeight.w600))
       ])),
     );
   }

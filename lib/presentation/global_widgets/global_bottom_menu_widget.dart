@@ -23,8 +23,8 @@ class GlobalBottomMenuWidget extends StatelessWidget {
         unselectedItemColor: AppColors().normalGreyColor,
         selectedItemColor: AppColors().primaryColor,
         onTap: changeIndex(),
-        unselectedLabelStyle: Get.textTheme.overline,
-        selectedLabelStyle: Get.textTheme.overline,
+        unselectedLabelStyle: Get.textTheme.labelSmall,
+        selectedLabelStyle: Get.textTheme.labelSmall,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: IconButton(

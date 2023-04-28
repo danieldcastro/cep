@@ -31,7 +31,7 @@ class HistoryAddressCardWidget extends GetView<HistoryController> {
             children: [
               Text(
                 favorite.cep,
-                style: Get.textTheme.bodyText1?.copyWith(
+                style: Get.textTheme.bodyLarge?.copyWith(
                   fontWeight: FontWeight.w500,
                   height: 1.3,
                   color: AppColors().fifthNormalGreyColor,
@@ -56,7 +56,7 @@ class HistoryAddressCardWidget extends GetView<HistoryController> {
           ),
           Text(
             controller.formatAddressString(favorite),
-            style: Get.textTheme.subtitle2?.copyWith(
+            style: Get.textTheme.titleSmall?.copyWith(
               height: 1.5,
               color: AppColors().fifthNormalGreyColor,
             ),

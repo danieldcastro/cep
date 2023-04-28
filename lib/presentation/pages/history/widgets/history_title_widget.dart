@@ -24,7 +24,7 @@ class HistoryTitleWidget extends StatelessWidget {
           const SizedBox(height: 14.37),
           Text(
             'Meus favoritos',
-            style: Get.textTheme.headline5
+            style: Get.textTheme.headlineSmall
                 ?.copyWith(color: Get.theme.primaryColor),
           ),
         ],

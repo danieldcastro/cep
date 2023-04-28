@@ -25,12 +25,12 @@ class SearchTextfieldWidget extends GetView<SearchController> {
       controller: controller.searchTextFieldController,
       keyboardType: TextInputType.number,
       cursorColor: AppColors().primaryColor,
-      style: Get.textTheme.bodyText2
+      style: Get.textTheme.bodyMedium
           ?.copyWith(height: 1.5, color: AppColors().secondNormalGreyColor),
       decoration: InputDecoration(
           hintText: 'Procurar CEP',
           isCollapsed: false,
-          hintStyle: Get.textTheme.bodyText2
+          hintStyle: Get.textTheme.bodyMedium
               ?.copyWith(height: 1.5, color: AppColors().secondNormalGreyColor),
           border: defaultBorder,
           filled: true,

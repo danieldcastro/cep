@@ -34,12 +34,12 @@ class HomeSearchCounterWidget extends GetView<HomeController> {
                         child: AutoSizeText(
                             controller.searchCounter.value.toString(),
                             maxLines: 1,
-                            style: Get.textTheme.headline2?.copyWith(
+                            style: Get.textTheme.displayMedium?.copyWith(
                                 color: AppColors().normalWhiteColor)),
                       ),
                     )),
                 Text('CEPs pesquisados',
-                    style: Get.textTheme.caption
+                    style: Get.textTheme.bodySmall
                         ?.copyWith(color: AppColors().normalWhiteColor)),
               ]),
         ),
