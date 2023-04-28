@@ -11,7 +11,7 @@ class SearchTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text('Procurar CEP',
-        style: Get.textTheme.headline5
+        style: Get.textTheme.headlineSmall
             ?.copyWith(color: AppColors().normalWhiteColor));
   }
 }

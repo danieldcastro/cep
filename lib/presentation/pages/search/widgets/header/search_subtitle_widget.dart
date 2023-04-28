@@ -15,7 +15,7 @@ class SearchSubtitleWidget extends StatelessWidget {
       child: Text(
         'Digite o CEP que você\ndeseja procurar',
         textAlign: TextAlign.center,
-        style: Get.textTheme.subtitle1?.copyWith(
+        style: Get.textTheme.titleMedium?.copyWith(
             fontSize: 18, height: 1.35, color: AppColors().normalWhiteColor),
       ),
     );

@@ -12,7 +12,7 @@ class SearchAddressTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Endereço:',
-      style: Get.textTheme.subtitle1
+      style: Get.textTheme.titleMedium
           ?.copyWith(fontSize: 19, color: AppColors().primaryColor),
     );
   }

@@ -35,7 +35,7 @@ class HomeSavedButtonWidget extends GetView<HomeController> {
               ),
               Text(
                 'CEPs salvos',
-                style: Get.textTheme.bodyText1?.copyWith(
+                style: Get.textTheme.bodyLarge?.copyWith(
                     color: AppColors().normalPurpleColor,
                     fontWeight: FontWeight.w600),
               ),
@@ -50,7 +50,7 @@ class HomeSavedButtonWidget extends GetView<HomeController> {
                         child: AutoSizeText(
                           controller.savedCounter.value.toString(),
                           minFontSize: 8,
-                          style: Get.textTheme.subtitle2
+                          style: Get.textTheme.titleSmall
                               ?.copyWith(color: AppColors().normalWhiteColor),
                         ),
                       ),
