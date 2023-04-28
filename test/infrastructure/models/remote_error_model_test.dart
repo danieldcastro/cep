@@ -10,7 +10,7 @@ void main() {
           RemoteErrorModel.fromJson(CepMock.validRemoteErrorJson);
 
       expect(remoteErrorModel, isA<RemoteErrorModel>());
-      expect(remoteErrorModel, RemoteErrorModel(error: true));
+      expect(remoteErrorModel, RemoteErrorModel(error: 'true'));
     });
 
     test('Should be return toString', () {

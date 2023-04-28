@@ -4,6 +4,7 @@ import 'package:cep/infrastructure/models/remote_error_model.dart';
 
 class CepMock {
   static const String validCep = '01001000';
+  static const String invalidCep = '01001999';
 
   static const Map<String, dynamic> validResponseJson = {
     "cep": "01001-000",
@@ -41,10 +42,10 @@ class CepMock {
 
   static const Map<String, dynamic> invalidCepJson = {};
 
-  static RemoteErrorModel validRemoteErrorModel = RemoteErrorModel(error: true);
+  static RemoteErrorModel validRemoteErrorModel =
+      RemoteErrorModel(error: 'true');
 
-  static RemoteErrorModel emptyRemoteErrorModel =
-      RemoteErrorModel(error: false);
+  static RemoteErrorModel emptyRemoteErrorModel = RemoteErrorModel(error: '');
 
   static RemoteCepModel validRemoteCepModel = RemoteCepModel(
     cep: '01001-000',

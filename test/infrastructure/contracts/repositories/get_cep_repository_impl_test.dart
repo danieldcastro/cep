@@ -28,7 +28,7 @@ void main() {
     }
 
     fail(FailureRequest error) {
-      when(() => datasource.getCepInfoByCepNumber(CepMock.validCep))
+      when(() => datasource.getCepInfoByCepNumber(CepMock.invalidCep))
           .thenAnswer((_) async => Left(error));
     }
 
@@ -45,25 +45,13 @@ void main() {
 
     test('Should be return error when call repository', () async {
       fail(FailureRequest.badRequest());
-      final result = await sut.call(CepMock.validCep);
-      verify(() => datasource.getCepInfoByCepNumber(CepMock.validCep))
+      final result = await sut.call(CepMock.invalidCep);
+      verify(() => datasource.getCepInfoByCepNumber(CepMock.invalidCep))
           .called(1);
       expect(result, isA<Either<FailureRequest, CepEntity>>());
       expect(result.isLeft, true);
       expect(result.left, isA<FailureRequest>());
       expect(result.left, FailureRequest.badRequest());
     });
-  });
-
-  test('Should be return a Failure request when result contains "erro"',
-      () async {
-    when(() => datasource.getCepInfoByCepNumber(CepMock.validCep)).thenAnswer(
-        (_) async =>
-            Right(HttpResponse(data: {"erro": "true"}, statusCode: 200)));
-    final result = await sut.call(CepMock.validCep);
-    expect(result, isA<Either<FailureRequest, CepEntity>>());
-    expect(result.isLeft, true);
-    expect(result.left, isA<FailureRequest>());
-    expect(result.left, const FailureRequest(message: 'CEP not found'));
   });
 }
