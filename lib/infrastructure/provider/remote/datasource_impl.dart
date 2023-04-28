@@ -3,6 +3,7 @@ import 'package:either_dart/either.dart';
 import '../../../core/util/helpers/datasource_constants.dart';
 import '../../../domain/contracts/gateways/http_service.dart';
 import '../../errors/failure_request.dart';
+import '../../models/remote_error_model.dart';
 import '../datasource.dart';
 
 class DatasourceImpl implements Datasource {
@@ -24,7 +25,9 @@ class DatasourceImpl implements Datasource {
   Either<FailureRequest, HttpResponse> _handleResponse(HttpResponse response) {
     switch (response.statusCode) {
       case 200:
-        return Right(response);
+        return RemoteErrorModel.fromJson(response.data).error != false
+            ? Left(FailureRequest.notFound('CEP not found'))
+            : Right(response);
       case 201:
         return Right(response);
       case 204:

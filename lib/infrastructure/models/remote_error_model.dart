@@ -1,7 +1,7 @@
 import '../../core/util/global_validation_map_function.dart';
 
 class RemoteErrorModel {
-  String error;
+  bool error;
   RemoteErrorModel({
     required this.error,
   });
@@ -10,13 +10,13 @@ class RemoteErrorModel {
       GlobalValidationMapFunction.checkMap(
               keys: ['erro'], map: map, className: 'RemoteErrorModel')
           ? RemoteErrorModel(
-              error: map['erro'] as String,
+              error: map['erro'] as bool,
             )
           : RemoteErrorModel.empty();
 
   factory RemoteErrorModel.empty() {
     return RemoteErrorModel(
-      error: '',
+      error: false,
     );
   }
 

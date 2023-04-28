@@ -41,10 +41,10 @@ class CepMock {
 
   static const Map<String, dynamic> invalidCepJson = {};
 
-  static RemoteErrorModel validRemoteErrorModel =
-      RemoteErrorModel(error: "true");
+  static RemoteErrorModel validRemoteErrorModel = RemoteErrorModel(error: true);
 
-  static RemoteErrorModel emptyRemoteErrorModel = RemoteErrorModel(error: "");
+  static RemoteErrorModel emptyRemoteErrorModel =
+      RemoteErrorModel(error: false);
 
   static RemoteCepModel validRemoteCepModel = RemoteCepModel(
     cep: '01001-000',
