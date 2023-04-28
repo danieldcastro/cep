@@ -42,10 +42,11 @@ class DioService implements HttpService {
       required Response<dynamic> response,
       required String method,
       required String statusCode}) {
-    _logger.info('############### $method ###############');
-    _logger.info('URL: $url');
-    _logger.info('StatusCode: $statusCode');
-    _logger.info('RESPONSE: ${response.data}');
-    _logger.info('######################################');
+    _logger.append('############### $method ###############');
+    _logger.append('URL: $url');
+    _logger.append('StatusCode: $statusCode');
+    _logger.append('RESPONSE: ${response.data}');
+    _logger.append('######################################');
+    _logger.closeAppend();
   }
 }
