@@ -25,7 +25,7 @@ class DatasourceImpl implements Datasource {
   Either<FailureRequest, HttpResponse> _handleResponse(HttpResponse response) {
     switch (response.statusCode) {
       case 200:
-        return RemoteErrorModel.fromJson(response.data).error != false
+        return RemoteErrorModel.fromJson(response.data).error.isNotEmpty
             ? Left(FailureRequest.notFound('CEP not found'))
             : Right(response);
       case 201:
