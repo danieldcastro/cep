@@ -65,7 +65,7 @@ class SearchController extends GetxController {
       isFavoriteButtonPressed.value = false;
       foundAddress.value = FormatAddressString.formatByCepEntity(_cepEntity);
       await _saveCepSearchCount();
-      checkIfCepIsAlreadyFavorited();
+      checkIfCepIsAlreadyFavorite();
       isLoading.value = false;
     } else {
       isLoading.value = false;
@@ -135,7 +135,7 @@ class SearchController extends GetxController {
     return result.right;
   }
 
-  checkIfCepIsAlreadyFavorited() {
+  checkIfCepIsAlreadyFavorite() {
     findAllFavorite().then((list) {
       for (var cep in list) {
         if (cep.cep == _cepEntity.cep) {

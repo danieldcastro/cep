@@ -76,7 +76,7 @@ void main() {
         () {
       successFind();
       sut.cepEntity = CepMock.validCepEntity;
-      sut.checkIfCepIsAlreadyFavorited();
+      sut.checkIfCepIsAlreadyFavorite();
       verify(() => findFavoriteUsecase.call()).called(1);
       expect(sut.isFavoriteButtonPressed.value, false);
     });
